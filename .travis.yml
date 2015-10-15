@@ -1,0 +1,26 @@
+---
+language: python
+python: "2.7"
+
+branches:
+  only:
+    - master
+
+install:
+  - sudo apt-get update -qq
+  - sudo apt-get install fail2ban
+
+script: 
+  - true
+
+  # Tests apache-wordpress-logins.conf
+  # - fail2ban-regex var/log/apache-wordpress-logins/access.log etc/fail2ban/filter.d/apache-wordpress-logins.conf
+  
+  # Tests apache-wordpress-xmlrpc.conf
+  # - fail2ban-regex var/log/apache-wordpress-xmlrpc/access.log etc/fail2ban/filter.d/apache-wordpress-xmlrpc.conf
+
+notifications:
+  email: false
+  hipchat:
+    rooms:
+      secure: fq9/5kpMNJZ9+fiqmQzKg36XJCBq9YuN9y4EhXzIaNim9Tfhg4aCBXTsbjFSqqBkNa1R1DCdF3wlBUo15/xEQKs0rTtQ5N1ZhRCvbuX6d/uJz4xDNhOyZbr+VuRBi8cksLRUh433nmaYpFQLscvVA51vdRzXTxZTp6XajBVV6KnKi2wfk00JclF81DssppxDC46UgCC6xDkT6XSM/+vgl0q41MLO/ecdNaUPfbP3sKYEtdMtBIAO1gIMVQ/tFIZulouKaEfkXWj/a8beR5i8wnCT+FeP//+1Rjn823vYe/+fWrAUo8G44OXnhL+tyN9pbqakk/Yy0Gqm9F+LObFGfZOFH07I75TaHE+mFOyit4jHdIAbOMB3efEvEBVXRhk+/2JCOoucuzXQmyaLWQSb7X9DL/fM14ZaQ7wdXzMXrTFKSGozTXtPSk+okTRfeJ07ZyiB7A1XF6cB2QBYkn6i+QHdp+8DGdBqdUFF91k+w7c9W+/16WYRe2pt07Qzw98twE5UAocvehLAGWqh6FXfmYnmXY8KBvOL7GkqtrCLh92TXvgDXN1hETvWsL5ebUA8FE9C4aRJGL1rFu3dQTNks5te4rLu3Sty4uLYKXio68zqb8UxvL1rSEOjJgmQWC+IaTrsIFN+sp0bBKclzi2U2VqVGRm5uv/e807QDbmUl6A=
